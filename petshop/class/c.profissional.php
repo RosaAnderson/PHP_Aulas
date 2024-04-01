@@ -16,4 +16,5 @@
 		public function setCRMV($CRMV)					{$this -> CRMV = $CRMV;}		
 		public function setAtendimento($Atendimento)	{$this -> Atendimento[] = $Atendimento;}		
 	}
+
 ?>

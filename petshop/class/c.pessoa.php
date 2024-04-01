@@ -15,4 +15,5 @@
 		public function setNome($Nome)			{$this -> Nome			= $Nome;}
 		public function setTelefone($Telefone)	{$this -> Telefone 		= $Telefone;}
 	}
+
 ?>

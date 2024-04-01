@@ -13,4 +13,5 @@
 		public function setServico($Servico)	{$this -> Servico[]	= $Servico;}		
 		public function setCachorro($Cachorro)	{$this -> Cachorro	= $Cachorro;}		
 	}
+
 ?>

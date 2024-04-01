@@ -19,4 +19,5 @@
 		public function setNascimento($Nascimento)		{$this -> Nascimento	= $Nascimento;}
 		public function setProprietario($Proprietario)	{$this -> Proprietario	= $Proprietario;}
 	}
+
 ?>

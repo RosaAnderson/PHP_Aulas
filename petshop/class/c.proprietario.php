@@ -16,4 +16,5 @@
 		public function setCPF($CPF)			{$this -> CPF 			= $CPF;}
 		public function setCachorro($Cachorro)	{$this -> Cachorro[] 	= $Telefone;}
 	}
+
 ?>

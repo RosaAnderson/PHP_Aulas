@@ -10,4 +10,5 @@
 		public function setDescritivo($Descritivo)	{$this -> Descritivo	= $Descritivo;}		
 		public function setPreco($Praco)			{$this -> Preco			= $Preco;}		
 	}
+
 ?>
