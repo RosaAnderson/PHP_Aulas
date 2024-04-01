@@ -1,7 +1,7 @@
 <?php
-	class Cachorro
+	class Servico
 	{
-		public function __construct(private string	$Descritovo	= "",
+		public function __construct(private string	$Descritivo	= "",
 									private float	$Preco		= 0.00){}
 
 		public function getDescritivo()				{return $this -> Descritivo;}
