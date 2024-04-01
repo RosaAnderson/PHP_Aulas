@@ -33,8 +33,6 @@
 		echo "Serviço: {$serv -> getDescritivo()} => Profissional: {$prof -> getNome()} <br>";
 	}
 	
-	
-	
 /**
 	echo "<pre>";
 		var_dump($prop);
