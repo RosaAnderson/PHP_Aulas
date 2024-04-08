@@ -4,8 +4,8 @@
 	{
 		// contrutor
 		public function __construct(private	string	$DataMatricula	= '',
-											array	$Aluno			= array(),
-											array	$Modalidade		= array()){}		
+													$Aluno			= null,
+													$Modalidade		= null){}
 	
 		// gets
 		public function getDataMatricula()	{return $this -> DataMatricula;}
@@ -14,8 +14,8 @@
 
 		// sets
 		public function setDataMatricula($DataMatricula)	{$this -> DataMatricula	= $DataMatricula;}
-		public function setAluno($Aluno)					{$this -> Aluno[]		= $Aluno;}
-		public function setModalidade($Modalidade)			{$this -> Modalidade[]	= $Modalidade;}
+		public function setAluno($Aluno)					{$this -> Aluno			= $Aluno;}
+		public function setModalidade($Modalidade)			{$this -> Modalidade	= $Modalidade;}
 		
 		// metodo
 	}

@@ -6,7 +6,37 @@
 	require_once "class/c.aluno.php";
 	require_once "class/c.modalidade.php";
 	require_once "class/c.matricula.php";
+	
+	
+	$alu01  = new Aluno('31/07/1979', 'Albert Lincon', '999.111.222-33');
 
+	$prof01 = new Professor('shihan-hanshi', 'Albert Einstein', '000.111.222-33');
+	
+	$mod01  = new Modalidade('Judô', array($prof01));
+	
+	$mat    = new Matricula('10/01/2024', $mod01, $alu01);
+
+
+
+	
+	echo "<h2> Matricula </h2>";
+	
+	echo "Data: {$mat -> getDataMatricula()} <br>";
+	
+	echo "<h3> Aluno </h3>";
+	
+//	echo "Nome: {$mat -> getAluno() -> getNome()} <br>";
+//	echo "CPF: {$mat -> getAluno() -> getCPF()} <br>";
+//	echo "Nascimento: {$mat -> getAluno() -> getDataNascimento()} <br>";
+	
+	
+
+
+
+
+
+	
+/**
 	// Professores
 	$prof01 = new Professor('shihan-hanshi', 'Albert Einstein',    '000.111.222-33');
 	$prof02 = new Professor('kiosi',         'Isaac Newton',       '111.222.333-44');
@@ -28,5 +58,5 @@
 	$mat01 = new Matricula('10/01/2024', array($mod01));
 	$mat02 = new Matricula('15/01/2024', array($mod02));
 	$mat03 = new Matricula('18/01/2024', array($mod03));
-	
+/**/
 ?>
