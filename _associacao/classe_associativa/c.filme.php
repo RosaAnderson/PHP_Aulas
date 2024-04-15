@@ -5,7 +5,7 @@
 	{
 		// contrutor
 		public function __construct(private string	$titulo	= '',
-								    private integer	$ano	= 0,
+								    private string	$ano	= '',
 									private array	$ator	= array()){}
 	
 		// gets

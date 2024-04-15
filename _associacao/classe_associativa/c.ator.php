@@ -5,7 +5,7 @@
 	{
 		// contrutor
 		public function __construct(private string	$nome			= '',
-								    private integer	$nacionalidade	= 0,
+								    private string	$nacionalidade	= '',
 									private array	$filme			= array()){}
 	
 		// gets
