@@ -1,7 +1,10 @@
 <?php
 	final class Corrente extends conta
 	{
-		public function __construct(private float $cLimite = 0.00, $pAgencia, $pNumero, $pSaldo)
+		public function __construct(private float $cLimite = 0.00,
+		                                          $pAgencia,
+												  $pNumero,
+												  $pSaldo)
 		{
 			parent:: __construct($pAgencia, $pNumero, $pSaldo);
 		}
