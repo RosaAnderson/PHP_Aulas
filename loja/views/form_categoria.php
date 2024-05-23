@@ -14,30 +14,29 @@
 			
 			$categoria = new Categoria(0 , $_POST["descritivo"]);
 			
-			
 			//inserir
 			$categoriaDAO = new CategoriaDAO();
 
 			$categoriaDAO->inserir($categoria);
+
 			header("location:listar_categorias.php");
 		}
-		
 	}
+	
+	require_once 'header.php';
 ?>
-<!doctype html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Loja</title>
-	</head>
-	<body>
-		<h1>Categoria</h1>
-		<form action="#" method="post">
-			<label for="descritivo">Descritivo:</label>
-			<input type="text" name="descritivo" id="descritivo">
-			<div><?php echo $erro;?></div>
-			<br><br>
-			<input type="submit" value="Cadastrar">
-		</form>
-	</body>
-</html>
+
+	<h1>Categoria</h1>
+	
+	<form action="#" method="post">
+		<label for="descritivo">Descritivo:</label>
+		<input type="text" name="descritivo" id="descritivo">
+		
+		<div><?php echo $erro;?></div>
+		<br><br>
+		<input type="submit" value="Cadastrar">
+	</form>
+		
+<?php
+	require_once 'footer.html';
+?>
