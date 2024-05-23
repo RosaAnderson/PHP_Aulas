@@ -81,5 +81,35 @@
 			
 			return $stm -> fetchAll(PDO::FETCH_OBJ);
 		}
+		
+		public function alterar_status_categoria($categoria)
+		{
+			$sql = "UPDATE categorias SET status = ? WHERE idcategoria = ?";
+			
+			$stm = $this -> db -> prepare($sql);
+			
+			$stm -> bindValue(1, $categoria -> getStatus());
+			
+			$stm -> bindValue(2, $categoria -> getIdcategoria());
+			
+			$stm -> execute();
+			
+			$this -> db = null;
+		}
+
+		public function buscar_ativas($categoria)
+		{
+			$sql = 'SELECT * FROM categorias WHERE status = ?';
+			
+			$stm = $this -> db -> prepare($sql);
+			
+			$stm -> bindValue(1, $categoria -> getStatus());
+			
+			$stm -> execute();
+			
+			$this -> db = null;
+			
+			return $stm -> fetchAll(PDO::FETCH_OBJ);
+		}
 	}
 ?>

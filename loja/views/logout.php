@@ -1,13 +1,9 @@
 <?php
-#	if (isset($_SESSION))
-#	{
-		session_destroy();
-		
-		header("location:login.php");
-#	}
-
-	$_SESSION['nome'] = '';
-
-
+	session_start();
+	
+	$_SESSION = array();
+	
+	session_destroy();
+	
 	header("location:index.php");
 ?>

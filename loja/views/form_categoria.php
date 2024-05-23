@@ -11,9 +11,9 @@
 			require_once "../models/c.conexao.php";
 			require_once "../models/c.categoria.php";
 			require_once "../models/c.categoriaDAO.php";
-			
+
 			$categoria = new Categoria(0 , $_POST["descritivo"]);
-			
+
 			//inserir
 			$categoriaDAO = new CategoriaDAO();
 
@@ -22,21 +22,21 @@
 			header("location:listar_categorias.php");
 		}
 	}
-	
+
 	require_once 'header.php';
 ?>
-
-	<h1>Categoria</h1>
-	
-	<form action="#" method="post">
-		<label for="descritivo">Descritivo:</label>
-		<input type="text" name="descritivo" id="descritivo">
-		
-		<div><?php echo $erro;?></div>
-		<br><br>
-		<input type="submit" value="Cadastrar">
-	</form>
-		
+	<div class="content">
+		<div class="container">
+			<h2 class="row justify-content-center align-items-center">Categoria</h2>
+			<form class="form-control" action="#" method="POST">
+				<label for="descritivo">Descritivo:</label>
+				<input class="form-control" type="text" name="descritivo" id="descritivo">
+				<div><?php echo $erro;?></div>
+				<br>
+				<input class="btn btn-primary" type="submit" value="Incluir">
+			</form>
+		</div>
+	</div>
 <?php
 	require_once 'footer.html';
 ?>
