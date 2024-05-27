@@ -30,7 +30,7 @@ var_dump($_SESSION);
 								<a class="nav-link" aria-current="page" href="index.php">Home</a>
 							</li>
 									<?php
-										if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == 'A')
+										//if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == 'A')
 										{
 											echo "
 												<li class='nav-item dropdown'>

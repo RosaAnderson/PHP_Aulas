@@ -35,16 +35,15 @@
 								<td>{$dado->descritivo}</td>
 								
 								<td>
-								
 									<a href='editar_categoria.php?id={$dado->idcategoria}' class='btn btn-warning'>Alterar</a>
-								
+
 									&nbsp;&nbsp;
-								
+
 									<a href='excluir_categoria.php?id={$dado->idcategoria}'class='btn btn-danger'>Excluir</a>
-								
+
 									&nbsp;&nbsp;
 						";
-								
+
 									if ($dado -> status == '1')
 									{
 										echo "<a href='status_categoria.php?id={$dado->idcategoria}&status=0'class='btn btn-warning'>Inativar</a>";
@@ -53,6 +52,7 @@
 									{
 										echo "<a href='status_categoria.php?id={$dado->idcategoria}&status=1'class='btn btn-warning'>Ativar</a>";
 									}
+
 						echo "								
 								</td>
 							</tr>

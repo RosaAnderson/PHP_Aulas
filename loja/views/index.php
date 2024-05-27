@@ -3,7 +3,7 @@
 ?>
 	<div class = "content">
 		<div class = "container">
-			<img width="800px" src="..\images\rapadura.jpg"/>
+			<img width="800px" src="..\images\bg.jpg"/>
 		</div>
 	</div>
 <?php

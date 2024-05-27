@@ -2,13 +2,13 @@
 	require_once "header.php";
 ?>
 	<div class="content">
-	  <div class="container">
-	  <?php
-			if(isset($_GET["msg"]))
-			{
-				echo "<div class='alert alert-success' role='alert'>{$_GET['msg']}</div>";
-			}
-	 ?>
+		<div class="container">
+			<?php
+				if(isset($_GET["msg"]))
+				{
+					echo "<div class='alert alert-success' role='alert'>{$_GET['msg']}</div>";
+				}
+			?>
 	  
 		<br><br>
 		

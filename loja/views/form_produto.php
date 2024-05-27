@@ -1,4 +1,6 @@
 <?php
+	require_once "header.php";
+	
 	require_once '../models/c.conexao.php';
 	require_once '../models/c.produto.php';
 	require_once '../models/c.produtoDAO.php';
@@ -7,12 +9,90 @@
 
 	$msg = array('','','','','','');
 	
-	require_once "header.php";
+	if($_POST){
+
+		$erro = false;
+
+		if(empty($_POST["nome"])){
+			$msg[0] = "Preencha o nome do produto!";
+			$erro = true;
+		}
+
+		if(empty($_POST["descricao"])){
+			$msg[1] = "Preencha a descrição do produto!";
+			$erro = true;
+		}
+
+		if(empty($_POST["preco"])){
+			$msg[2] = "Preencha o preço do produto!";
+			$erro = true;
+		}
+
+		if(empty($_POST["estoque"])){
+			$msg[3] = "Preencha o estoque do produto!";
+			$erro = true;
+		}
+
+		if($_POST["categoria"] == 0){
+			$msg[4] = "Escolha uma categoria valida para o produto!";
+			$erro = true;
+		}
+
+		if(empty($_POST["descricao"])){
+			$msg[5] = "Preencha a descrição do produto!";
+			$erro = true;
+		}
+		
+		if(empty($_FILES["imagem"]["name"] != "")){
+			$msg[5] = "Selecione a imagem do produto!";
+			$erro = true;
+		}
+		else
+		{
+			if($_FILES["imagem"]["type"] != "image/png" && 
+			$_FILES["imagem"]["type"] != "image/jpeg" && 
+			$_FILES["imagem"]["type"] != "image/webp")
+			{
+				$msg[5] = "Formato de imagem invalida!";
+				$erro = true;
+			}
+		}
+
+		if(!$erro)
+		{
+			$categoria = new Categoria($_POST["categoria"]);
+			
+			$produto = new Produto(0 ,    					
+										$_POST["nome"],
+                                        $_POST["descricao"],
+                                        $_POST["preco"],
+                                        $_FILES["imagem"]["name"],
+                                        $_POST["estoque"],
+                                        $categoria);
+
+			//inserir
+			$produtoDAO = new ProdutoDAO();
+
+			$produtoDAO->inserir($produto);
+
+			header("location:listar_produtos.php");
+		}
+
+		if($erro = true){
+
+		}
+
+		echo "<pre>";
+		var_dump($_FILES["imagem"]);
+		echo "</pre>";
+		
+		
+	}
 ?>
 	<div class="content">
 	  <div class="container">
 		<h1 class="row justify-content-center align-items-center">Produto</h1>
-		<form class="form-control" action="/lojaMVC/inserir_produto" method="POST" enctype="multipart/form-data">
+		<form class="form-control" action="#" method="POST" enctype="multipart/form-data">
 			<div class="mb-3">
 				<label for="nome" class="form-label">Nome</label>
 				<input class="form-control" type="text"  id="nome" name="nome" value="<?php echo isset($_POST['nome'])?$_POST['nome']:''?>">
@@ -53,11 +133,15 @@
 						$retorno = $categoriaDAO -> buscar_ativas($categoria);
 						
 						foreach($retorno as $dado)
-						{
-							echo "
-								<option value = '{$dado -> idcategoria}'> {$dado -> descritivo} </option>							
-							";
-						}
+							if (isset($_POST["categoria"]) && 
+									  $_POST["categoria"] == $dado -> idcategoria)
+								echo "
+									<option value = '{$dado -> idcategoria}' selected='selected'> {$dado -> descritivo} </option>
+								";								
+							else
+								echo "
+									<option value = '{$dado -> idcategoria}'> {$dado -> descritivo} </option>
+								";
 					?>
 				</select>
 				<div style="color:red"><?php echo $msg[4] != ""?$msg[4]:'';?></div>
@@ -82,7 +166,7 @@
 	<script>
 		function mostrar(img)
 		{
-			if(img.files  && img.files[0])
+			if(img.files && img.files[0])
 			{
 				var reader = new FileReader();
 				reader.onload = function(e){

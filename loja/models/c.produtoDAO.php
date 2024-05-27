@@ -8,13 +8,31 @@
 				
 		public function inserir($produto)
 		{
-			$sql = "INSERT INTO produtos (descritivo) VALUES (?)";
+			$sql = "INSERT INTO produtos (
+			                                nome,		
+			                                descricao,
+			                                preco,
+			                                imagem,
+			                                estoque,
+			                                idcategoria
+										 )
+					VALUES (?,?,?,?,?,?)";
+					
 			//preparar frase
 			$stm = $this->db->prepare($sql);
+			
 			//substituir o ponto de interrogação
-			$stm->bindValue(1, $produto->getDescritivo());
+
+			$stm->bindValue(1, $produto->getNome());
+			$stm->bindValue(2, $produto->getDescricao());
+			$stm->bindValue(3, $produto->getPreco());
+			$stm->bindValue(4, $produto->getImagem());
+			$stm->bindValue(5, $produto->getEstoque());
+			$stm->bindValue(6, $produto->getCategoria() -> getIdcategoria());	
+			
 			//executar a frase sql
 			$stm->execute();
+			
 			//fechar a conexão
 			$this->db = null;
 		}
