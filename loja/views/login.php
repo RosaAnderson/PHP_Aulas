@@ -59,10 +59,12 @@
 		<div class = "container">
 		
 			<?php
-				if ($msg[2] <> '')
-					echo "<div class='alert alert-danger' role='alert'>
-						      $msg[2];
-						  </div>";
+				if ($msg[0] <> '')
+					echo "
+						<div class='alert alert-danger' role='alert'>
+							$msg[2];
+						</div>
+					";
 			?>
 			
 			<h2>Login</h2>

@@ -29,7 +29,7 @@
 			
 			return $stm -> fetchAll(PDO::FETCH_OBJ);
 		}
-				
+
 		public function insert($usuario)
 		{
 			$sql = "INSERT INTO usuarios
