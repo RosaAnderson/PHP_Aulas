@@ -6,13 +6,9 @@
 		public function __construct(private string	$logradouro		= '',
 								    private string	$numero			= '',
 								    private string 	$bairro			= '',
-									private string	$cep			= '',
-/*
-									private string	$complemento	= '',
-									private string	$cidade			= '',
-									private string	$UF				= '',
-*/
-									private			$aluno			= null){}
+									private string	$cep			= ''/*,
+
+									private			$aluno			= null*/){}
 	
 		// gets
 		public function getLogradouro()	{return $this -> logradouro;}
@@ -20,7 +16,6 @@
 		public function getBairro()  	{return $this -> bairro;	}
 		public function getCep()	 	{return $this -> cep;		}
 		public function getAluno() 		{return $this -> aluno;		}
-
 
 		// sets
 		public function setLogradouro($logradouro)	{$this -> logradouro	= $logradouro; 	}
